@@ -7,6 +7,9 @@ resource "aws_instance" "myways_instance" {
     instance_type = "t2.micro"
     key_name = "ec2_myways_KP"
     vpc_security_group_ids = ["sg-058d2104aa47f4ad3"]
+    tags = {
+      Name = "My_ways_instance"
+    }
 }
 
 resource "aws_s3_bucket" "myways_s3_bucket" {
