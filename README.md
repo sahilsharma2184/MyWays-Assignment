@@ -256,3 +256,29 @@ Modify the `values.yaml` file as below
 
 After this you see the default " It works! " from Apache, same as in the below image\
 ![apacheBrowser.yaml](Images/apacheBrowser.png)
+
+## Setting up the monitoring with Prometheus
+
+Install Prometheus with the below commands
+
+* `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
+* `helm repo update`
+* `helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring --create-namespace`
+
+Check if the Prometheus Pods are running
+
+* `kubectl get pods -n monitoring`
+
+The terminal window will be like below
+![Prometheus.yaml](Images/PromeMonitoring.png)
+
+After that, access the Prometheus UI using the below command
+
+* `kubectl port-forward -n monitoring svc/prometheus-server 9091:80`
+
+The terminal window will look like below
+
+![Promui.yaml](Images/PromUI.png)
+
+Now you can visit the Prometheus dashboard using 
+`http://localhost:9091`
