@@ -14,11 +14,28 @@ With that, here is a breakdown of all the services used and their roles.
 This includes automating the deployment and management of AWS infrastructure, including S3 buckets, SQS queues, and EC2 instances, among other necessary resources.
 
 How it's used:
-
 Terraform will provide the cloud infrastructure, and everything from S3 to SQS, EC2, right down to Secrets Manager will be correctly implemented and will, consequently, maintain state management.
 
 
-<strong>Amazon S3</strong> is a scalable, secure cloud storage service for storing and retrieving any amount of data. It’s perfect for managing files like documents, images, and videos, and integrates with other AWS services for easy data handling.
+<strong>Amazon S3: Simple Storage Service</strong>
+
+Use the original documents (for example, PDFs) for uploading the invoice.
+How it's used:
+
+Files such as `SampleInvoice.pdf` would be stored in an S3 bucket, myways-s3-bucket-2184
+
+It stores the department-raw processed data into the S3 bucket under particular folders, such as `processed/finance/`, right after processing.
+
+If the Invoice is in your local desktop(not on the ec2 instance) then copy your file to the ec2 instance using the below command.
+scp -i /path/to/your/key_pair.pem "D:\SampleInvoice.pdf" ubuntu@<ec2-public-ip>:/home/ubuntu/
+
+Upload the pdf file from your ec2 instance to the s3 bucket using the below command.
+aws s3 cp /home/ubuntu/SampleInvoice.pdf s3://myways-s3-bucket-2184/
+
+For verification of the file use the below command.
+aws s3 ls s3://myways-s3-bucket-2184/
+
+
 
 <strong>AWS Lambda</strong> is a serverless computing service that runs code without needing to manage servers. It automates tasks, scales automatically, and charges only for the compute time used, making it a cost-effective solution for backend operations.
 
