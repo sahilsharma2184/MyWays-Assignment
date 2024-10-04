@@ -11,7 +11,6 @@
     - [Containerizing the Apache Server using Helm](#containerizing-the-apache-server-using-helm)
     - [Prometheus Setup](#setting-up-the-monitoring-with-prometheus)
     - [Grafana Setup](#setting-up-visualization-using-grafana)
-    - [Grafana Setup](#setting-up-visualization-using-grafana)
     - [Prometheus Dashboard](#dashboard-of-prometheus-after-successful-execution)
     - [Grafana Dashboard](#dashboard-of-grafana-after-successful-execution)
 
