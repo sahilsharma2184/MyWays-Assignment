@@ -175,6 +175,9 @@ The extracted data is converted into department-specific outputs, such as the fi
 
 ## Results
 
+* #### SSH into the ec2 instance locally
+![ssh](Images/ssh.png)
+
 * #### Activating the python virtual environment.
 ![python virtual environment](Images/Activating%20the%20python%20virtual%20environment.png)
 
