@@ -26,15 +26,15 @@ It stores the department-raw processed data into the S3 bucket under particular 
 
 If the Invoice is in your local desktop(not on the ec2 instance) then copy your file to the ec2 instance using the below command.
 
-```bash scp -i /path/to/your/key_pair.pem "D:\SampleInvoice.pdf" ubuntu@<ec2-public-ip>:/home/ubuntu/ ```
+`scp -i /path/to/your/key_pair.pem "D:\SampleInvoice.pdf" ubuntu@<ec2-public-ip>:/home/ubuntu/`
 
 Upload the pdf file from your ec2 instance to the s3 bucket using the below command.
 
-```bash aws s3 cp /home/ubuntu/SampleInvoice.pdf s3://myways-s3-bucket-2184/```
+`aws s3 cp /home/ubuntu/SampleInvoice.pdf s3://myways-s3-bucket-2184/`
 
 For verification of the file use the below command.
 
-```bash aws s3 ls s3://myways-s3-bucket-2184/```
+`aws s3 ls s3://myways-s3-bucket-2184/`
 
 
 
