@@ -234,3 +234,5 @@ Create helm chart: `helm create apache-chart`
 Modify the values.yaml file as below
 
 ![values.yaml](Images/resource_valueYAML.png)
+
+![values.yaml](Images/valueImage.png)
