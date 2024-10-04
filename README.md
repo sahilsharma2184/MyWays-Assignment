@@ -83,7 +83,7 @@ You SSH to an EC2 instance and run your commands in a managed environment.
 
 After the whole infrastructure of aws is set-up using the `main.tf` script, here are the commands that I have executed one-by-one for managing and using the services.
 
-### <u> ssh into the aws ec2 instance <u>
+### ssh into the aws ec2 instance
 
 `ssh -i myways_ec2_keypair.pem ubuntu@<public_ip_of_ubuntu_instance>`
 
@@ -156,17 +156,5 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 `cat finance_data.json`
 ## Execution Flow & Results
 
-* **The audio/video file is uploaded in the S3 bucket**
-  ![S3bucket](Images/S3bucket.png)
-
-* **AWS IAM: The role is executed here with 3 policies namely**
-  * AccessS3ReadOnlyAccess
-  * AmazonTranscribeFullAccess
-  * CloudWatchFullAccess
-  ![IAM](Images/IAM.png)
-
-* **The purpose of the Lambda function is to initiate a transcription job using the Amazon Transcribe service when an audio or video file is uploaded to an S3 bucket.**
-  ![Lambda](Images/lambdaa.png)
-
-* **AWS Transcribe: Within the Transcription section of the project, the resulting text extracted from the audio/video file residing in the S3 bucket is displayed under the Transcription Preview section**
-  ![Output](Images/ouput.png)
+* #### Document Upload
+Document Upload: A document (e.g., `SampleInvoice.pdf`) is uploaded to the S3 bucket (`myways-s3-bucket-2184`).
