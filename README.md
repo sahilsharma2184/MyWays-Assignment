@@ -85,6 +85,34 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 
 ### ssh into the aws ec2 instance
 
+`ssh -i myways_ec2_keypair.pem ubuntu@<public_ip_of_ubuntu_instance>`
+
+### Install python3 and Pip
+
+`sudo apt install python3 python3-pip`
+
+### Set Up Python Virtual Environment
+
+`python3 -m venv myenv`
+`source myenv/bin/activate`
+
+### Install the aws cli on the ec2 instance
+
+`curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
+
+###### Unzip the installer
+
+`sudo apt-get install unzip -y`
+
+###### Run the AWS CLI installer
+
+`sudo ./aws/install`
+
+###### Verify the Installation
+
+`aws --version`
+
+
 ## Execution Flow & Results
 
 * **The audio/video file is uploaded in the S3 bucket**
