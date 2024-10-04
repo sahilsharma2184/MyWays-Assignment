@@ -7,7 +7,7 @@
     - [Execution Flow](#execution-flow)
     - [Results](#results)
 2. [Part 2: Application Deployment on Kubernetes Using Helm](#part-2-application-deployment-on-kubernetes-using-helm)
-    - [Deployment](#deployment)
+    - [Set Up Kubernetes Environment (Minikube)](#Set-Up-Kubernetes-Environment-(Minikube))
     - [Monitoring and Performance](#monitoring-and-performance)
 
 ---
