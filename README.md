@@ -215,4 +215,14 @@ The extracted data is converted into department-specific outputs, such as the fi
 # Part 2: Application Deployment on Kubernetes Using Helm
 ## Application: Apache
 
-I am deploying an Apache server on a Kubernetes cluster, monitoring it using Prometheus and Grafana, and configuring dashboards to visualize performance data
+I am deploying an Apache server on a Kubernetes cluster, monitoring it using Prometheus and Grafana, and configuring dashboards to visualize performance data.
+
+## Set Up Kubernetes Environment (Minikube)
+
+Note: Already installed minikube and kubectl.
+
+Start minikube using below command
+`minikube start`
+
+Verify setup by running the command below
+`kubectl get nodes`
