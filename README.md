@@ -178,7 +178,7 @@ The extracted data is converted into department-specific outputs, such as the fi
 * #### Activating the python virtual environment
 ![python virtual environment](Images/Activating%20the%20python%20virtual%20environment.png)
 
-* #### Uploading the file to s3 bucket
+* #### Uploading the file to the s3 bucket
 ![Upload to s3 bucket](Images/Upload%20the%20file%20to%20s3%20bucket.png)
 
 * #### Sending message to SQS Queue
