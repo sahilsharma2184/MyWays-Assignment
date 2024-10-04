@@ -83,7 +83,7 @@ You SSH to an EC2 instance and run your commands in a managed environment.
 
 After the whole infrastructure of aws is set-up using the `main.tf` script, here are the commands that I have executed one-by-one for managing and using the services.
 
-### ssh into the aws ec2 instance
+### <u> ssh into the aws ec2 instance <u>
 
 `ssh -i myways_ec2_keypair.pem ubuntu@<public_ip_of_ubuntu_instance>`
 
