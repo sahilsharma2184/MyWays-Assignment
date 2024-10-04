@@ -282,3 +282,30 @@ The terminal window will look like below
 
 Now you can visit the Prometheus dashboard using 
 `http://localhost:9091`
+
+## Setting up visualization using Grafana
+
+Add the Grafana Helm Repository
+
+* `helm repo add grafana https://grafana.github.io/helm-charts`
+* `helm repo update`
+
+Install Grafana using helm
+`helm install grafana grafana/grafana --namespace monitoring`
+
+Check that Grafana is working
+`kubectl get pods -n monitoring`
+
+The terminal would look like this
+![Grafana.yaml](Images/Grafana.png.png)
+
+Now forward traffic from your local machine's port 3000 to the Grafana service's port 80 inside your Kubernetes cluster, enabling you to access the Grafana dashboard locally 
+`kubectl port-forward -n monitoring svc/grafana 3000:80`
+
+The terminal would look like below
+![GrafanaForward.yaml](Images/GrafanaForwarding.png)
+
+Now you can access Grafana using
+`http://localhost:3000`
+
+The username will be `admin`, the password you can get by running this command on powershell `kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | %{[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_))}`
