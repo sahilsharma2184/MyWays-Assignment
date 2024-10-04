@@ -1,3 +1,16 @@
+# Cloud-based Document Processing and Kubernetes Application Deployment
+
+## Table of Contents
+1. [Part 1: Infrastructure Deployment Using Terraform](#part-1-infrastructure-deployment-using-terraform)
+    - [Services Used](#services-used-in-the-assignment-with-their-roles)
+    - [Command Execution](#command-execution)
+    - [Execution Flow](#execution-flow)
+    - [Results](#results)
+2. [Part 2: Application Deployment on Kubernetes Using Helm](#part-2-application-deployment-on-kubernetes-using-helm)
+    - [Deployment](#deployment)
+    - [Monitoring and Performance](#monitoring-and-performance)
+
+---
 # Part 1: Infrastructure Deployment Using Terraform
 ## Application: Cloud-based document processing.
 
@@ -198,3 +211,8 @@ The extracted data is converted into department-specific outputs, such as the fi
 
 * ####  Viewing the Processed Data.
 ![ View the Processed Data](Images/View%20the%20processed%20data.png)
+
+# Part 2: Application Deployment on Kubernetes Using Helm
+## Application: Apache
+
+I am deploying an Apache server on a Kubernetes cluster, monitoring it using Prometheus and Grafana, and configuring dashboards to visualize performance data
