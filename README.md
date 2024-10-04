@@ -104,15 +104,57 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 
 `sudo apt-get install unzip -y`
 
-#### Run the AWS CLI installer
+##### Run the AWS CLI installer
 
 `sudo ./aws/install`
 
-###### Verify the Installation
+##### Verify the Installation
 
 `aws --version`
 
+### Configure AWS CLI
 
+`aws configure`
+
+###### Enter your AWS Access Key ID, AWS Secret Access Key, Default region, and Default output format when prompted,using the IAM role and in the Users section, generate the access keys
+
+### Activate Virtual Environment
+
+`source myenv/bin/activate`
+
+### Install dependencies like boto3 inside the python virtual environment
+
+`pip install boto3`
+
+### Make python script named `document_processing.py`
+
+`vim document_processing.py`
+
+######	After creating the .py script, paste the code provided in the github repository.
+
+### Upload the pdf file to the s3 bucket
+
+`aws s3 cp SampleInvoice.pdf s3://myways-s3-bucket-2184/`
+
+### Send message to the SQS Queue
+
+`aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/3240XXXXX890/document-processing-queue_2184 \ --message-body "{\"bucket_name\":\"myways-s3-bucket-2184\", \"file_key\":\"SampleInvoice.pdf\"}" --region us-east-1`
+
+### Run the Document Processing Script
+
+`python3 document_processing.py`
+
+### Verify the processed data in the s3 bucket
+
+`aws s3 ls s3://myways-s3-bucket-2184/processed/finance/`
+
+### Download the Processed Data
+
+`aws s3 cp s3://myways-s3-bucket-2184/processed/finance/finance_data.json`
+
+### View the Processed Data
+
+`cat finance_data.json`
 ## Execution Flow & Results
 
 * **The audio/video file is uploaded in the S3 bucket**
