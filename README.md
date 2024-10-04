@@ -221,8 +221,16 @@ I am deploying an Apache server on a Kubernetes cluster, monitoring it using Pro
 
 Note: Already installed minikube and kubectl.
 
-Start minikube using below command
+Start minikube using the command: 
 `minikube start`
 
-Verify setup by running the command below
+Verify setup by running the command:
 `kubectl get nodes`
+
+## Containerizing the Apache Server using Helm
+
+Create helm chart: `helm create apache-chart`
+
+Modify the values.yaml file as below
+
+![values.yaml](Images/resource_valueYAML.png)
