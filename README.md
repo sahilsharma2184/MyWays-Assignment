@@ -254,4 +254,5 @@ Modify the `values.yaml` file as below
 * Verify the Apache Deployment by typing the below link in the browser
 `http://localhost:9090`
 
-After this you see the default " It works! " from Apache
+After this you see the default " It works! " from Apache, same as in the below image\
+![apacheBrowser.yaml](Images/apacheBrowser.png)
