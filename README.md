@@ -309,3 +309,9 @@ Now you can access Grafana using
 `http://localhost:3000`
 
 The username will be `admin`, the password you can get by running this command on powershell `kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | %{[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_))}`
+
+## Add Prometheus as a Data Source
+
+In Grafana go to `Dashboard` and there click on `Add Visualization`, then further make sure the `Data source` at the bottom is set as `prometheus`
+
+Select the metric as `up` and then click on `Run queries` and click `Apply` at the top right corner to save the panel to dashboard. 
