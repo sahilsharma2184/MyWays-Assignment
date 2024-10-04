@@ -6,24 +6,11 @@ I made  a cloud-based processing and review of documents application involving t
 With that, here is a breakdown of all the services used and their roles.
 
 
-## Key Features
-
-<strong>Seamless Media Upload: </strong>Users can effortlessly upload audio or video files to an Amazon S3 bucket, initiating the transcription process.
-
-<strong> Automated Processing: </strong>The upload of a media file automatically triggers an AWS Lambda function, streamlining the transcription workflow.
-
-<strong>Advanced Transcription: </strong>Once triggered, the Lambda function engages Amazon Transcribe to convert spoken content within the media file into accurate text.
-
-<strong>Comprehensive Log Management: </strong>Upon completion of the transcription process, Lambda sends detailed logs to Amazon CloudWatch, facilitating thorough monitoring and debugging.
-
-<strong>State Monitoring & Management: </strong>The change in transcription job state triggers an additional Lambda function, ensuring that all post-transcription processes are executed smoothly and efficiently.
-
-<strong>Secure Output Storage: </strong> The resulting transcription text is securely stored in an Amazon S3 bucket, ready for easy access and further processing.
-
-## Project Tech-Stack
+## Services used in the assignment with their roles.
 
 
 <strong>Terraform (for Infrastructure-as-Code):</strong> 
+
 This includes automating the deployment and management of AWS infrastructure, including S3 buckets, SQS queues, and EC2 instances, among other necessary resources.
 
 How it's used:
