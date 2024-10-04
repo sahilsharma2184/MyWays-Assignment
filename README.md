@@ -236,3 +236,22 @@ Modify the `values.yaml` file as below
 ![values.yaml](Images/resource_valueYAML.png)&nbsp;&nbsp;&nbsp;&nbsp;
 ![values.yaml](Images/valueImage.png)
 
+* Deploy the chart using Helm 
+`helm upgrade --install apache-app ./apache-chart`
+
+* Check that the service is running 
+`kubectl get services`
+
+* Retrieve the NodePort assigned to the Apache Service 
+`kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services apache-app-apache-chart`
+
+* Retrieve the IP address of the node 
+`kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}"`
+
+* Using port forwarding to access locally
+`kubectl port-forward svc/apache-app-apache-chart 9090:80`
+
+* Verify the Apache Deployment by typing the below link in the browser
+`http://localhost:9090`
+
+After this you see the default " It works! " from Apache
