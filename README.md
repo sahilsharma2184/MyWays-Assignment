@@ -7,8 +7,11 @@
     - [Execution Flow](#execution-flow)
     - [Results](#results)
 2. [Part 2: Application Deployment on Kubernetes Using Helm](#part-2-application-deployment-on-kubernetes-using-helm)
-    - [Set Up Kubernetes Environment (Minikube)](#set-up-kubernetes-environment-(minikube))
+    - [Set Up Kubernetes Environment (Minikube)](#set-up-kubernetes-environment-minikube)
+    - [Containerizing the Apache Server using Helm](#containerizing-the-apache-server-using-helm)
     - [Monitoring and Performance](#monitoring-and-performance)
+    - [Prometheus Setup](#setting-up-the-monitoring-with-prometheus)
+    - [Grafana Setup](#setting-up-visualization-using-grafana)
 
 ---
 # Part 1: Infrastructure Deployment Using Terraform
