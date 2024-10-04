@@ -158,3 +158,17 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 
 * #### Document Upload
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document Upload: A document (e.g., `SampleInvoice.pdf`) is uploaded to the S3 bucket (`myways-s3-bucket-2184`).
+
+* #### SQS Message sent
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A message is being sent to the SQS queue document-processing-queue_2184 with a bucket and file key of the uploaded document.
+
+* #### Transaction processing:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `document_processing.py` script runs on an EC2 instance.
+It retrieves the SQS message, downloads a document from an S3 bucket, and then processes it through AWS Textract or similar tools.
+The extracted data is converted into department-specific outputs, such as the finance department seeing amount and vendor information.
+
+* #### Save Processed Data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The processed data (e.g., `finance_data.json`) are stored back in a different location in the S3 bucket (`processed/finance/`).
+
+* #### Deletion of SQS Message
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The SQS message is deleted after processing the document, hence complete work task.
