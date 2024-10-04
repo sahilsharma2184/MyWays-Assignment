@@ -115,7 +115,6 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 ### Configure AWS CLI
 
 `aws configure`
-
 ###### Enter your AWS Access Key ID, AWS Secret Access Key, Default region, and Default output format when prompted,using the IAM role and in the Users section, generate the access keys
 
 ### Activate Virtual Environment
