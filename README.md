@@ -100,11 +100,11 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 
 `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
 
-###### Unzip the installer
+##### Unzip the installer
 
 `sudo apt-get install unzip -y`
 
-###### Run the AWS CLI installer
+#### Run the AWS CLI installer
 
 `sudo ./aws/install`
 
