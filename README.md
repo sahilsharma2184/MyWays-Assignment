@@ -154,7 +154,7 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 ### View the Processed Data
 
 `cat finance_data.json`
-## Execution Flow & Results
+## Execution Flow
 
 * #### Document Upload
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document Upload: A document (e.g., `SampleInvoice.pdf`) is uploaded to the S3 bucket (`myways-s3-bucket-2184`).
@@ -172,3 +172,8 @@ The extracted data is converted into department-specific outputs, such as the fi
 
 * #### Deletion of SQS Message
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The SQS message is deleted after processing the document, hence complete work task.
+
+## Results
+
+* #### Activating the python virtual environment
+![python virtual environment](Images/Activating%20the%20python%20virtual%20environment.png)
