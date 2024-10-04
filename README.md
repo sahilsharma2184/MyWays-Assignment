@@ -315,3 +315,12 @@ The username will be `admin`, the password you can get by running this command o
 In Grafana go to `Dashboard` and there click on `Add Visualization`, then further make sure the `Data source` at the bottom is set as `prometheus`
 
 Select the metric as `up` and then click on `Run queries` and click `Apply` at the top right corner to save the panel to dashboard. 
+
+## Dashboard Of Prometheus After successfull execution
+
+Write `up` in the query and click `Execute`
+![PDash.yaml](Images/PrometheusDashboard.png)
+
+## Dashboard Of Grafana After successfull execution
+
+![GraDash.yaml](Images/GrafanaDash.png)
