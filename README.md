@@ -104,11 +104,11 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 
 `sudo apt-get install unzip -y`
 
-##### Run the AWS CLI installer
+* ##### Run the AWS CLI installer
 
 `sudo ./aws/install`
 
-##### Verify the Installation
+* ##### Verify the Installation
 
 `aws --version`
 
