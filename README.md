@@ -79,6 +79,11 @@ You SSH to an EC2 instance and run your commands in a managed environment.
 
 `python3` and a virtual environment `myenv` is where all the necessary packages, including `boto3`, are to be installed in managing the environment.
 
+## Command Execution
+
+After the whole infrastructure of aws is set-up using the `main.tf` script, here are the commands that I have executed one-by-one for managing and using the services.
+
+### ssh into the aws ec2 instance
 
 ## Execution Flow & Results
 
