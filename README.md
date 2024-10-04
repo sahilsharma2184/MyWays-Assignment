@@ -1,6 +1,10 @@
-# VoiceScript: AWS-Speech-to-Text-Conversion-Service
+# Part 1: Infrastructure Deployment Using Terraform
+## Application: Cloud-based document processing.
 
-VoiceScript is a robust and automated solution for transcribing audio and video files using Amazon Web Services (AWS). This project harnesses the power of AWS Lambda, Amazon S3, and Amazon Transcribe to deliver efficient and reliable transcription services, complete with comprehensive logging and monitoring through Amazon CloudWatch.
+
+I made  a cloud-based processing and review of documents application involving the use of multiple AWS services, along with Python automation. The system processes the uploaded document, be it an invoice, contract, or anything else, and saves the department-specific processed data in the cloud. For setting up the cloud infrastructure I have used a terraform script Here I took the Finance department which only deals with the amount to be paid, vendor’s account number and his name; every other information is secondary to it, the main focus lies on these 3 things.
+With that, here is a breakdown of all the services used and their roles.
+
 
 ## Key Features
 
@@ -18,13 +22,14 @@ VoiceScript is a robust and automated solution for transcribing audio and video 
 
 ## Project Tech-Stack
 
-![CloudWatch](Images/CloudWatch.png)&nbsp;&nbsp;&nbsp;&nbsp;
-![S3 Bucket](Images/S3.png)&nbsp;&nbsp;&nbsp;&nbsp;
-![Lambda](Images/Lambda.png)&nbsp;&nbsp;&nbsp;&nbsp;
-![Transcribe](Images/Transcribe.png)
 
+<strong>Terraform (for Infrastructure-as-Code):</strong> 
+This includes automating the deployment and management of AWS infrastructure, including S3 buckets, SQS queues, and EC2 instances, among other necessary resources.
 
-<strong>AWS CloudWatch</strong> monitors AWS resources and applications by collecting metrics, logs, and events. It provides insights into system performance and allows you to set alarms and view data to ensure smooth operation.
+How it's used:
+
+Terraform will provide the cloud infrastructure, and everything from S3 to SQS, EC2, right down to Secrets Manager will be correctly implemented and will, consequently, maintain state management.
+
 
 <strong>Amazon S3</strong> is a scalable, secure cloud storage service for storing and retrieving any amount of data. It’s perfect for managing files like documents, images, and videos, and integrates with other AWS services for easy data handling.
 
