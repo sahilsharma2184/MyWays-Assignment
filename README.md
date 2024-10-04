@@ -11,8 +11,9 @@
     - [Containerizing the Apache Server using Helm](#containerizing-the-apache-server-using-helm)
     - [Prometheus Setup](#setting-up-the-monitoring-with-prometheus)
     - [Grafana Setup](#setting-up-visualization-using-grafana)
-    - [Prometheus Dashboard](#dashboard-of-prometheus-after-successful-execution)
-    - [Grafana Dashboard](#dashboard-of-grafana-after-successful-execution)
+    - [Add Promrtheus as a Data Source](#add-prometheus-as-a-data-source)
+    - [Prometheus Dashboard](#dashboard-of-prometheus-after-successfull-execution)
+    - [Grafana Dashboard](#dashboard-of-grafana-after-successfull-execution)
 
 ---
 # Part 1: Infrastructure Deployment Using Terraform
