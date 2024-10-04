@@ -21,6 +21,7 @@ How it's used:Terraform will provide the cloud infrastructure, and everything fr
 Use the original documents (for example, PDFs) for uploading the invoice.
 
 How it's used:
+
 Files such as `SampleInvoice.pdf` would be stored in an S3 bucket, `myways-s3-bucket-2184`
 It stores the department-raw processed data into the S3 bucket under particular folders, such as `processed/finance/`, right after processing.
 
@@ -37,10 +38,47 @@ For verification of the file use the below command.
 `aws s3 ls s3://myways-s3-bucket-2184/`
 
 
+<strong>Amazon SQS: Simple Queue Service</strong>
 
-<strong>AWS Lambda</strong> is a serverless computing service that runs code without needing to manage servers. It automates tasks, scales automatically, and charges only for the compute time used, making it a cost-effective solution for backend operations.
+This queuing service decouples requests for document processing by storing messages that contain the information on which document to process and enabling asynchronous processing.
 
-<strong>AWS Transcribe</strong> converts spoken language into written text using advanced machine learning. It supports multiple languages and handles various audio qualities, making it ideal for transcribing audio and video content.
+How it is used:
+
+An SQS queue named `document-processing-queue_2184` is written to, with message details about which S3 bucket and file , in this case `SampleInvoice.pdf`.
+
+The feature should be used when retrieving the message from the SQS queue and processing the document through an application or Python script; afterwards, the message should be deleted.
+
+`aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/3240XXXXX890/document-processing-queue_2184 \ --message-body "{\"bucket_name\":\"myways-s3-bucket-2184\", \"file_key\":\"SampleInvoice.pdf\"}" --region us-east-1`
+
+<strong>AWS Textract</strong> 
+
+AWS Extract is used for the extraction of text, data, or metadata from documents, such as invoices and contracts.
+
+How it is used:
+
+The Python script, `document_processing.py`, processes the document recovered from S3 using AWS Textract for document processing.
+The departmental output can be detected to be transformed into different form.
+
+<strong>AWS Secrets Manager</strong> 
+
+Secret Manager is used for storing and managing sensitive credentials like AWS API keys, database credentials, etc., needed by the application securely.
+
+How it is used:
+
+TThe Python script document_processing.py  needs access to AWS services (S3, SQS, Textract). Instead of embedding AWS Access Keys and Secret Keys into the script, Secrets Manager stores these credentials securely.The application retrieves the AWS credentials at runtime from Secrets Manager to authenticate API calls to various AWS services.
+
+<strong>AWS EC2: Elastic Compute Cloud</strong> 
+
+Ec2 does the document processing service on this host. The EC2 instance runs the Python script which automates the workflow, reading SQS messages, processing documents, and saving results.
+
+How it is used:
+
+The Ubuntu-based EC2 actually executes the script, called `document_processing.py`, that coordinates all of the work, including retrieving a document from S3, processing it using Textract, and saving results back to S3.
+
+You SSH to an EC2 instance and run your commands in a managed environment.
+
+`python3` and a virtual environment `myenv` is where all the necessary packages, including `boto3`, are to be installed in managing the environment.
+
 
 ## Execution Flow & Results
 
