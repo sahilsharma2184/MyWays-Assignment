@@ -297,7 +297,7 @@ Check that Grafana is working
 `kubectl get pods -n monitoring`
 
 The terminal would look like this
-![Grafana.yaml](Images/Grafana.png.png)
+![Grafana.yaml](Images/Grafana.png)
 
 Now forward traffic from your local machine's port 3000 to the Grafana service's port 80 inside your Kubernetes cluster, enabling you to access the Grafana dashboard locally 
 `kubectl port-forward -n monitoring svc/grafana 3000:80`
