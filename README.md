@@ -157,4 +157,4 @@ After the whole infrastructure of aws is set-up using the `main.tf` script, here
 ## Execution Flow & Results
 
 * #### Document Upload
-Document Upload: A document (e.g., `SampleInvoice.pdf`) is uploaded to the S3 bucket (`myways-s3-bucket-2184`).
+&nbsp;&nbsp;&nbsp;&nbsp;Document Upload: A document (e.g., `SampleInvoice.pdf`) is uploaded to the S3 bucket (`myways-s3-bucket-2184`).
