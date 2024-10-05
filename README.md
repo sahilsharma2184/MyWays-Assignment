@@ -1,4 +1,4 @@
-# Cloud-based Document Processing and Kubernetes Application Deployment
+# MyWays.ai Assignment: Platform Engineer Intern Assignment
 
 ## Table of Contents
 1. [Part 1: Infrastructure Deployment Using Terraform](#part-1-infrastructure-deployment-using-terraform)
